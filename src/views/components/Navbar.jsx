@@ -8,9 +8,12 @@ export default function Navbar() {
 
   useEffect(() => {
     const fetchAuth = async () => {
-      const response = await fetch("http://localhost:3000/sessions/api/auth", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://api-blog-express-9dbb509347a4.herokuapp.com/sessions/api/auth",
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       setAuth(data);
     };

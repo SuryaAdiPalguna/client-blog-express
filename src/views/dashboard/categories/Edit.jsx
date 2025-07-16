@@ -16,6 +16,22 @@ export default function DashboardCategoriesEdit() {
 
   const navigate = useNavigate();
 
+  const [admin, setAdmin] = useState({ status: false, data: null });
+
+  useEffect(() => {
+    const fetchAdmin = async () => {
+      const response = await fetch(
+        "https://api-blog-express-9dbb509347a4.herokuapp.com/sessions/api/admin",
+        {
+          credentials: "include",
+        }
+      );
+      const data = await response.json();
+      setAdmin(data);
+    };
+    fetchAdmin();
+  }, []);
+
   useEffect(() => {
     const fetchAuth = async () => {
       try {
@@ -134,6 +150,11 @@ export default function DashboardCategoriesEdit() {
 
   if (!auth.status) {
     navigate("/login");
+    return;
+  }
+
+  if (!admin.status) {
+    navigate("/dashboard");
     return;
   }
 

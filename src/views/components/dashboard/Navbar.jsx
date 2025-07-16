@@ -7,9 +7,12 @@ export default function DashboardNavbar() {
 
   useEffect(() => {
     const fetchAuth = async () => {
-      const response = await fetch("http://localhost:3000/sessions/api/auth", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://api-blog-express-9dbb509347a4.herokuapp.com/sessions/api/auth",
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       setAuth(data);
     };
@@ -19,10 +22,13 @@ export default function DashboardNavbar() {
   const handleLogout = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch("http://localhost:3000/api/users/logout", {
-        method: "POST",
-        credentials: "include",
-      });
+      const res = await fetch(
+        "https://api-blog-express-9dbb509347a4.herokuapp.com/api/users/logout",
+        {
+          method: "POST",
+          credentials: "include",
+        }
+      );
       const result = await res.json();
       console.log(result);
       navigate("/");

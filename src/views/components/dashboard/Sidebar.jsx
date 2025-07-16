@@ -6,9 +6,12 @@ export default function DashboardSidebar() {
 
   useEffect(() => {
     const fetchAdmin = async () => {
-      const response = await fetch("http://localhost:3000/sessions/api/admin", {
-        credentials: "include",
-      });
+      const response = await fetch(
+        "https://api-blog-express-9dbb509347a4.herokuapp.com/sessions/api/admin",
+        {
+          credentials: "include",
+        }
+      );
       const data = await response.json();
       setAdmin(data);
     };
