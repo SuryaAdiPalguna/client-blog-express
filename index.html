@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Vite + React</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/trix@2.0.8/dist/trix.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"
+    ></script>
+    <style>
+      trix-toolbar [data-trix-button-group="file-tools"] {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 500, // values from 0 to 3000, with step 50ms
+        once: true, // whether animation should happen only once - while scrolling down
+      });
+    </script>
+  </body>
+</html>
