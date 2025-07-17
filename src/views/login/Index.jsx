@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
 
 export default function LoginIndex() {
@@ -223,12 +223,12 @@ export default function LoginIndex() {
                   </button>
                   <div className="text-sm font-medium text-gray-500">
                     Don't have an account yet?{" "}
-                    <a
-                      href="/register"
+                    <Link
+                      to="/register"
                       className="text-blue-700 hover:underline"
                     >
                       Sign up
-                    </a>
+                    </Link>
                   </div>
                 </form>
               </div>
